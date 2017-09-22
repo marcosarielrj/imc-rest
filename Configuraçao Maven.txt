@@ -1,0 +1,6 @@
+Adicionar Maven quando não tiver no Eclipse: Help - Install new software - mv2.
+
+Goals:
+org.apache.tomcat.maven:tomcat7-maven-plugin:run
+maven.tomcat.port
+9090
