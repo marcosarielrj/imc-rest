@@ -93,12 +93,12 @@
                   </div>
                   <br>
                   <div class="form-group">
-                    <button class="btn btn-secondary" id="calcular" onclick="return false">Calcular</button>
+                    <button class="btn btn-secondary">Calcular</button>
                   </div>
                 </div>
               </form>
               <%
-              	// Inicio do Scriplet.
+              	// Inicio do Scriplet. - id="calcular" onclick="return false"
     		
     		      String pesoString = request.getParameter("peso");
     			  String alturaString = request.getParameter("altura");
@@ -115,13 +115,15 @@
                		  <span class="input-group-addon">Resultado</span>
                  		<h1 class="form-control" id="resultado" style ="font-size: 1.5em"></h1>
                       </div>
-    			<% } else{
+    			<% 
+    			
+    			  } else{
     				
     			%>
-    				<div class="input-group input-group-lg">
+    				/*<div class="input-group input-group-lg">
                		  <span class="input-group-addon">Resultado</span>
                  		<h1 class="form-control" id="resultado" style ="font-size: 1.5em"	></h1>
-                      </div>
+                      </div> */
                 <%
     			}
               	
