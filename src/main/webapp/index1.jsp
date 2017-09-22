@@ -21,12 +21,12 @@ if (idade != 0) {
 		
 %>
 
-	<h3>De menor! Bro.</h3>
+	<h3><%=idade%> De menor! Bro.</h3>
 <%
 
 	}else{	
 %>
-	<h3>De maior! Bro.</h3>
+	<h3><%out.print(idade) %> De maior! Bro.</h3>
 <%
 	}
 }

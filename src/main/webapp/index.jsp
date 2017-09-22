@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html lang="en">
 
   <head>
@@ -113,7 +114,7 @@
     			%>
     				  <div class="input-group input-group-lg">
                		  <span class="input-group-addon">Resultado</span>
-                 		<h1 class="form-control" id="resultado" style ="font-size: 1.5em"></h1>
+                 		<h1 class="form-control" id="resultado" style ="font-size: 1.5em"><%=imc%></h1>
                       </div>
     			<% 
     			
