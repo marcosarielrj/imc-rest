@@ -24,7 +24,7 @@
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
     
-    <script>
+    <!--  <script>
       
       function calcularimc(){
         
@@ -37,6 +37,8 @@
         console.log(imc);
       }
     </script>
+    -->
+    
   </head>
 
   <body>
@@ -81,27 +83,54 @@
                 <div class="control-group">
                   <div class="input-group input-group-lg">
                     <span class="input-group-addon" >Kg</span>
-                    <input type="text" class="form-control" placeholder="Peso" id="peso">
+                    <input type="text" class="form-control" placeholder="Peso" name="peso">
                   </div>
                   <br>
                   <div class="input-group input-group-lg">
                     <span class="input-group-addon" >m²</span>
-                    <input type="text" class="form-control" placeholder="Altura" id="altura">
+                    <input type="text" class="form-control" placeholder="Altura" name="altura">
                     <p class="help-block text-danger"></p>
                   </div>
                   <br>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-secondary" id="calcular" onclick="calcularimc() ; return false">Calcular</button>
+                    <button class="btn btn-secondary" id="calcular" onclick="return false">Calcular</button>
                   </div>
-                  <div class="input-group input-group-lg">
-                    <span class="input-group-addon">Resultado</span>
-                    <h1 type="show" class="form-control" placeholder="" id="resultado" style ="font-size: 1.5em">
-                  </div>
+                </div>
               </form>
-              </div>
+              <%
+              	// Inicio do Scriplet.
+    		
+    		      String pesoString = request.getParameter("peso");
+    			  String alturaString = request.getParameter("altura");
+    			  
+    			  int peso = pesoString == null ? 0 : Integer.parseInt(pesoString);
+    			  float altura = alturaString == null ? 0 : Float.parseFloat(alturaString);
+    			  
+    			  float imc = peso / (altura * altura);
+    			  
+    			  if (peso != 0 && altura != 0) {
+    				  
+    			%>
+    				  <div class="input-group input-group-lg">
+               		  <span class="input-group-addon">Resultado</span>
+                 		<h1 class="form-control" id="resultado" style ="font-size: 1.5em"></h1>
+                      </div>
+    			<% } else{
+    				
+    			%>
+    				<div class="input-group input-group-lg">
+               		  <span class="input-group-addon">Resultado</span>
+                 		<h1 class="form-control" id="resultado" style ="font-size: 1.5em"	></h1>
+                      </div>
+                <%
+    			}
+              	
+              %>
+              
             </div>
           </div>
         </div>
+      </div>
     </header>
 
     <header class="masthead" style="background-image: url('img/contact-bg.jpg')">
