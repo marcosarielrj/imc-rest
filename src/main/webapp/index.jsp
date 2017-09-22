@@ -121,10 +121,10 @@
     			  } else{
     				
     			%>
-    				/*<div class="input-group input-group-lg">
+    				<div class="input-group input-group-lg">
                		  <span class="input-group-addon">Resultado</span>
                  		<h1 class="form-control" id="resultado" style ="font-size: 1.5em"	></h1>
-                      </div> */
+                      </div>
                 <%
     			}
               	
