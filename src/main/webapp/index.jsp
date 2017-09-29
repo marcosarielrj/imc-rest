@@ -99,13 +99,16 @@
                 </div>
               </form>
               <%
-              	// Inicio do Scriplet. - id="calcular" onclick="return false"
+              	// Inicio do Scriplet.
     		
-    		      String pesoString = request.getParameter("peso");
-    			  String alturaString = request.getParameter("altura");
+    		      String recebepeso = request.getParameter("peso");
+    			  String recebealtura = request.getParameter("altura");
     			  
-    			  int peso = pesoString == null ? 0 : Integer.parseInt(pesoString);
-    			  float altura = alturaString == null ? 0 : Float.parseFloat(alturaString);
+    			  String pesoString = recebepeso.replaceAll(",", ".");
+    			  String alturaString = recebealtura.replaceAll(",", ".");
+    			  
+    			  float peso = pesoString.equals("") ? 0 : Float.parseFloat(pesoString);
+    			  float altura = alturaString.equals("") ? 0 : Float.parseFloat(alturaString);
     			  
     			  float imc = peso / (altura * altura);
     			  
@@ -119,15 +122,7 @@
     			<% 
     			
     			  } else{
-    				
-    			%>
-    				<div class="input-group input-group-lg">
-               		  <span class="input-group-addon">Resultado</span>
-                 		<h1 class="form-control" id="resultado" style ="font-size: 1.5em"	></h1>
-                      </div>
-                <%
-    			}
-              	
+    			}	
               %>
               
             </div>
