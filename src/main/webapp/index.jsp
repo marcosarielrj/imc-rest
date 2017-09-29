@@ -101,16 +101,27 @@
               <%
               	// Inicio do Scriplet.
     		
-    		      String recebepeso = request.getParameter("peso");
-    			  String recebealtura = request.getParameter("altura");
+    		      String pesoString = request.getParameter("peso");
+    			  String alturaString = request.getParameter("altura");
     			  
-    			  String pesoString = recebepeso.replaceAll(",", ".");
-    			  String alturaString = recebealtura.replaceAll(",", ".");
-    			  
-    			  float peso = pesoString.equals("") ? 0 : Float.parseFloat(pesoString);
-    			  float altura = alturaString.equals("") ? 0 : Float.parseFloat(alturaString);
-    			  
-    			  float imc = peso / (altura * altura);
+    			  if (pesoString == null || alturaString == null || pesoString.equals("") || alturaString.equals("")){
+    				  
+    			%>
+    				  <div class="input-group input-group-lg">
+               		  <span class="input-group-addon">Resultado</span>
+                 		<h1 class="form-control" id="resultado" style ="font-size: 1.5em">Digite os valores</h1>
+                      </div>
+    			<% 
+    			  } else {
+    				  
+    				  pesoString = pesoString.replaceAll(",", ".");
+    				  alturaString = alturaString.replaceAll(",", ".");
+    				  
+    				  float peso = pesoString == null ? 0 : Float.parseFloat(pesoString);
+    			  	  float altura = alturaString == null ? 0 : Float.parseFloat(alturaString);
+    			  	  
+    			  	  float imc = peso / (altura * altura);
+    			  	  
     			  
     			  if (peso != 0 && altura != 0) {
     				  
@@ -122,8 +133,12 @@
     			<% 
     			
     			  } else{
-    			}	
+    			}
+    			
+    		}  
+  
               %>
+              
               
             </div>
           </div>
