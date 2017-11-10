@@ -26,16 +26,19 @@
     
     <script>
       
-      function calcularimc(){
-        
-        var peso = $("input#peso").val();
-        var altura = $("input#altura").val();
-        var imc = peso / (altura*altura);
-        $('#resultado').html(imc);
-        $("input#peso").val("");
-        $("input#altura").val("");
-        console.log(imc);
-      }
+      function calcularimc() {
+          altura.value.replace(/[^0-9]/g,'')
+    	  
+    	  $.ajax({
+            dataType: "json",
+            url: "../api/imcjaxrs/calcularimc?peso=" + document.forms["calcimc"].elements["peso"].value.replace(",",".") + "&" + "altura=" + document.forms["calcimc"].elements["altura"].value.replace(",",".")
+          }).then(function (data) {
+           
+            $('#resultado').html(data.imc + " em (" + data.dataDeProcessamento + ")");
+            $("input#peso").val("");
+            $("input#altura").val("");
+          });
+        }
     </script>
   </head>
 

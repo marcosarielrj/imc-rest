@@ -4,26 +4,36 @@ import java.util.Date;
 
 public class Calculo {
 
-	private int idade;
+	private double peso;
 	
-	private String resultado;
+	private String altura;
+	
+	private double imc;
 	
 	private String dataDeProcessamento;
-
-	public int getIdade() {
-		return idade;
+	
+	public double getPeso() {
+		return peso;
 	}
 
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setPeso(double peso) {
+		this.peso = peso;
 	}
 
-	public String getResultado() {
-		return resultado;
+	public String getAltura() {
+		return altura;
 	}
 
-	public void setResultado(String resultado) {
-		this.resultado = resultado;
+	public void setAltura(String altura) {
+		this.altura = altura;
+	}
+
+	public double getImc() {
+		return imc;
+	}
+
+	public void setImc(double imc) {
+		this.imc = imc;
 	}
 
 	public String getDataDeProcessamento() {
@@ -37,17 +47,21 @@ public class Calculo {
 	public Calculo() {
 	}
 
-	public Calculo(int idade) {
-		this.idade = idade;
+	public Calculo(double peso, String altura) {
+		this.peso = peso;
+		this.altura = altura;
 	}
 
-	public void calcular() {
-		if (idade < 18) {
-			setResultado("Menor");
-		} else {
-			setResultado("Maior");
-		}
+	
+	public void calcularimc(double peso, String altura) {
+		
+		double alturadouble = Double.parseDouble(altura);
+		double imc = peso / (alturadouble * alturadouble);
+		
+		setImc(imc);
 		setDataDeProcessamento(new Date().toString());
 	}
+
+	
 
 }
