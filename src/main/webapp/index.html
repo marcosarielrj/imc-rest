@@ -33,10 +33,11 @@
             dataType: "json",
             url: "../api/imcjaxrs/calcularimc?peso=" + document.forms["calcimc"].elements["peso"].value.replace(",",".") + "&" + "altura=" + document.forms["calcimc"].elements["altura"].value.replace(",",".")
           }).then(function (data) {
-           
+        	  
             $('#resultado').html(data.imc + " em (" + data.dataDeProcessamento + ")");
             $("input#peso").val("");
             $("input#altura").val("");
+            alert(data.imc + " em (" + data.dataDeProcessamento + ")");
           });
         }
     </script>
