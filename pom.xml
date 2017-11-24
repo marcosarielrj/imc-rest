@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>pw2017</groupId>
-  <artifactId>imc-rest</artifactId>
+  <artifactId>imc</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   

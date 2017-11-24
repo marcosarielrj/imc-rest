@@ -27,8 +27,7 @@
     <script>
       
       function calcularimc() {
-          altura.value.replace(/[^0-9]/g,'')
-    	  
+          altura.value.replace(/[^0-9]/g,'') 
     	  $.ajax({
             dataType: "json",
             url: "../api/imcjaxrs/calcularimc?peso=" + document.forms["calcimc"].elements["peso"].value.replace(",",".") + "&" + "altura=" + document.forms["calcimc"].elements["altura"].value.replace(",",".")
@@ -37,7 +36,6 @@
             $('#resultado').html(data.imc + " em (" + data.dataDeProcessamento + ")");
             $("input#peso").val("");
             $("input#altura").val("");
-            alert(data.imc + " em (" + data.dataDeProcessamento + ")");
           });
         }
     </script>
